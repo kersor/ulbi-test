@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "noImplicitAny": true,
+        "module": "ESNext",
+        "target": "es5",
+        "sourceMap": true,
+        "jsx": "react-jsx",
+        "allowJs": true,
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["src/*"],
+            "@public/*": ["public/*"],
+            "@app/*": ["src/app/*"],
+            "@pages/*": ["src/pages/*"],
+            "@entities/*": ["src/entities/*"],
+            "@features/*": ["src/features/*"],
+            "@widgets/*": ["src/widgets/*"],
+            "@shared/*": ["src/shared/*"] 
+        }
+    },
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
+    }
+}
