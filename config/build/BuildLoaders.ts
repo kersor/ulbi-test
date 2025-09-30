@@ -5,8 +5,21 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin"
 export const BuildLoaders = (options: BuildOptions): ModuleOptions["rules"] => {
     const tsLoader = {
         test: /\.tsx?$/,
-        use: 'ts-loader',
         exclude: /node_modules/,
+        use: [
+            {
+                loader: 'babel-loader',
+                options: {
+                    plugins: [require.resolve('react-refresh/babel')]
+                }
+            },
+            {
+                loader: 'ts-loader',
+                options: {
+                    transpileOnly: true // ускоряет сборку и позволяет Babel обрабатывать JSX
+                }
+            }
+        ]
     }
 
     const cssLoader = {

@@ -2,6 +2,7 @@ import { Configuration, DefinePlugin, ProgressPlugin } from "webpack"
 import { BuildOptions } from "./types"
 import HtmlWebpackPlugin from "html-webpack-plugin"
 import MiniCssExtractPlugin from "mini-css-extract-plugin"
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 
 export const BuildPlugins = (options: BuildOptions): Configuration["plugins"] => {
     const config: Configuration["plugins"] = [
@@ -17,6 +18,7 @@ export const BuildPlugins = (options: BuildOptions): Configuration["plugins"] =>
 
     if (options.isDev) {
         config.push(new ProgressPlugin())
+        config.push(new ReactRefreshWebpackPlugin())
     }
 
     if (options.isProd) {
