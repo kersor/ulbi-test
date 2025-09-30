@@ -1,0 +1,9 @@
+.wrapper {
+    height: var(--height-navbar);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    justify-content: flex-end;
+    gap: 20px;
+    background: var(--inverted-bg-color);
+}

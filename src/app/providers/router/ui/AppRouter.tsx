@@ -4,16 +4,23 @@ import { RouterApp } from '../model/createRouter'
 
 const AppRouter = () => {
   return (
-    <BrowserRouter>
-        <Suspense fallback={<div>Loading...</div>}>
-            <Routes>
-                {
-                    RouterApp.map((rout) => <Route key={rout.path} path={rout.path} element={rout.element} />)
-                }
-            </Routes>
-        </Suspense>
-    </BrowserRouter>
-
+      <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+              {
+                  RouterApp.map((rout) => (
+                    <Route
+                        key={rout.path}
+                        path={rout.path}
+                        element={(
+                            <div className='page-content'>
+                                {rout.element}
+                            </div>
+                        )}
+                    />
+                  ))
+              }
+          </Routes>
+      </Suspense>
   )
 }
 

@@ -1,0 +1,21 @@
+.wrapper {
+    height: calc(100vh - var(--height-navbar));
+    width: var(--width-sidebar);
+    background: var(--inverted-bg-color);
+    transition: width 0.3s ease;
+    position: relative;
+}
+
+.collapsed {
+    width: var(--width-sidebar-collapsed);
+}
+
+.switcher {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

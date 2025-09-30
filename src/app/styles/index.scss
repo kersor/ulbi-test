@@ -11,3 +11,11 @@
 
     height: 100vh;
 }
+
+.content-page {
+    display: flex;
+}
+
+.page-content {
+    flex-grow: 1;
+}

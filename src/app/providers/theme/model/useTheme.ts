@@ -3,7 +3,10 @@ import { persist, createJSONStorage } from 'zustand/middleware'
 
 const LOCAL_STORAGE_KEY_THEME = "theme"
 
-export type BackType = "dark" | "light"
+export enum BackType {
+  DARK = "dark",
+  LIGHT = "light"
+}
 
 type ThemeType = {
     theme: BackType
@@ -13,8 +16,8 @@ type ThemeType = {
 export const useTheme = create<ThemeType>()(
   persist(
     (set, get) => ({
-      theme: "light",
-      setTheme: () => set({ theme: get().theme === "dark" ? "light" : "dark" }),
+      theme: BackType.LIGHT,
+      setTheme: () => set({ theme: get().theme === BackType.DARK ? BackType.LIGHT : BackType.DARK }),
     }),
     { name: LOCAL_STORAGE_KEY_THEME },
   ),

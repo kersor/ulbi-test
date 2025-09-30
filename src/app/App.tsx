@@ -5,13 +5,18 @@ import { RouterApp } from './providers/router/model/createRouter'
 import { AppRouter } from './providers/router'
 import './styles/index.scss'
 import { useTheme } from './providers/theme'
+import { Navbar } from '@/widgets/navbar'
+import { Sidebar } from '@/widgets/sidebar'
 
 export const App = () => {
-  const { setTheme, theme } = useTheme(state => state)
+  const { theme } = useTheme(state => state)
   return (
     <div className={`app ${theme}`}>
-      <div onClick={() => setTheme()}>Фон</div>
-      <AppRouter />
+      <Navbar /> 
+      <div className='content-page'>
+        <Sidebar />
+        <AppRouter />
+      </div>
     </div>
   )
 }
