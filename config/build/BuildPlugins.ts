@@ -1,4 +1,4 @@
-import { Configuration, ProgressPlugin } from "webpack"
+import { Configuration, DefinePlugin, ProgressPlugin } from "webpack"
 import { BuildOptions } from "./types"
 import HtmlWebpackPlugin from "html-webpack-plugin"
 import MiniCssExtractPlugin from "mini-css-extract-plugin"
@@ -8,6 +8,10 @@ export const BuildPlugins = (options: BuildOptions): Configuration["plugins"] =>
         new HtmlWebpackPlugin({
             template: options.paths.html
         }),
+
+        new DefinePlugin({
+            __DEV__: JSON.stringify(options.isDev)
+        })
     ]
 
 

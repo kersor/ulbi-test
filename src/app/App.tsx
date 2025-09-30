@@ -12,11 +12,13 @@ export const App = () => {
   const { theme } = useTheme(state => state)
   return (
     <div className={`app ${theme}`}>
-      <Navbar /> 
-      <div className='content-page'>
-        <Sidebar />
-        <AppRouter />
-      </div>
+      <Suspense fallback="">
+        <Navbar /> 
+        <div className='content-page'>
+          <Sidebar />
+          <AppRouter />
+        </div>
+      </Suspense>
     </div>
   )
 }

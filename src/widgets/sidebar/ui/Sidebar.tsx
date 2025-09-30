@@ -3,6 +3,7 @@ import styles from './styles.module.scss'
 import clsx from 'clsx'
 import Button from '@/shared/ui/button/Button'
 import { ThemeSwitcher } from '@/widgets/themeSwitcher'
+import { LangSwitcher } from '@/widgets/langSwitcher'
 
 
 const Sidebar = () => {
@@ -17,6 +18,7 @@ const Sidebar = () => {
       <Button onClick={funcToggleCollapsed}>Toggle</Button>
       <div className={styles.switcher}>
         <ThemeSwitcher />
+        <LangSwitcher />
       </div>
     </div>
   )
